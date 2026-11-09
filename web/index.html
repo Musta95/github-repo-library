@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>GitHub Repo Library — Discover, save and organize developer tools</title>
+  <link rel="stylesheet" href="/style.css?v=4.4">
+  <script defer src="/app.js?v=4.4"></script>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo"><div class="logo-icon">⌘</div><div><strong>Repo Library</strong><small>Your GitHub toolbox</small></div></div>
+    <div class="side-heading">LIBRARY</div>
+    <nav id="categoryNav"><button class="nav-item active" data-category="All"><span>◈</span> All Repositories <span class="nav-count" id="count-all">0</span></button></nav>
+    <button class="nav-item add-list-nav" id="newCategoryBtn"><span>＋</span> Create Category</button>
+    <div class="side-heading lists-heading">MY LISTS</div>
+    <nav id="listsNav" class="lists-nav"></nav>
+    <button class="nav-item add-list-nav" id="newListBtn"><span>＋</span> Create List</button>
+    <button class="nav-item favorite-nav" id="favoritesNav"><span>★</span> Favorites <span class="nav-count" id="count-favorites">0</span></button>
+    <div class="sidebar-bottom">
+      <div class="status-card"><div class="status-dot"></div><div><strong>Local Library</strong><small>SQLite · Your data stays here</small></div></div>
+      <div class="version">Version 4.4 · Categories + AI</div>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><span class="eyebrow">OVERVIEW / <span id="breadcrumb">ALL REPOSITORIES</span></span><div class="top-right"><span class="top-info" id="tokenInfo">GitHub API</span><a href="https://github.com" target="_blank" rel="noreferrer">GitHub ↗</a></div></header>
+    <section class="hero">
+      <div><div class="hero-kicker"><span class="tiny-star">✦</span> YOUR DEVELOPER LIBRARY</div><h1>Great tools. <em>Easy to find.</em></h1><p>Save GitHub repositories from Instagram, blogs, or GitHub, organize your own lists, and find tools using your AI assistant.</p></div>
+      <div class="hero-actions"><button class="btn btn-outline" id="newListTopBtn">＋ New List</button><button class="btn btn-outline" id="addBtn">＋ Save GitHub Link</button><button class="btn btn-primary" id="discoverBtn">✦ Discover Repositories</button></div>
+    </section>
+    <section class="metrics"><div class="metric"><span>SAVED REPOS</span><strong id="metricTotal">0</strong><small>in your library</small></div><div class="metric"><span>CATEGORIES</span><strong id="metricCategories">0</strong><small>with saved repositories</small></div><div class="metric"><span>FAVORITES</span><strong id="metricFavs">0</strong><small>quick access</small></div><div class="metric metric-accent"><span>DATA SOURCE</span><strong>GitHub API</strong><small>Live imports, stored locally</small></div></section>
+    <section class="collection-header"><div><h2 id="viewTitle">All Repositories</h2><p id="resultCount">0 projects in your collection</p></div><div class="collection-actions"><button class="text-btn" id="editListBtn" hidden>✎ Edit List</button><button class="text-btn" id="starsBtn">☆ Import GitHub Stars</button><a class="text-btn" href="/api/export.csv">↓ CSV</a><a class="text-btn" href="/api/export-library.json">↓ Backup JSON</a></div></section>
+    <section class="toolbar"><div class="searchbox"><span class="search-icon">⌕</span><input type="search" id="search" placeholder="Search by name, tools, keywords, or technology…" autocomplete="off"><kbd>⌕</kbd></div><select id="categorySelect" aria-label="Choose category"><option>All</option></select><select id="sortSelect" aria-label="Sort order"><option value="stars">Most Stars</option><option value="recent">Recently Updated</option><option value="added">Recently Saved</option><option value="synced">Recently Imported</option><option value="name">Name A–Z</option></select></section>
+    <div class="auto-scan-info" id="autoScanInfo" aria-live="polite">Automatic GitHub discovery: loading status…</div>
+    <div id="repoGrid" class="repo-grid" aria-live="polite"></div>
+    <div class="pagination"><button class="btn btn-outline btn-small" id="prevBtn" hidden>← Previous</button><span id="pageLabel"></span><button class="btn btn-outline btn-small" id="nextBtn" hidden>Next →</button></div>
+  </main>
+</div>
+<div id="overlay" class="overlay" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><div class="dialog-head"><h3 id="dialogTitle">Add Repository</h3><button class="close-btn" id="closeModal" aria-label="Close">✕</button></div><div id="dialogContent"></div></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
