@@ -4,6 +4,12 @@ A self-hosted, searchable catalog of useful GitHub repositories. Save links you 
 
 **Version 4.4 — English interface and backward-compatible category migration.**
 
+## Screenshot
+
+![GitHub Repo Library dashboard](assets/repo-library-dashboard.webp)
+
+
+
 ## Features
 
 - **Repository discovery:** Import public repositories using GitHub's API, discover projects by category, or import GitHub stars.
@@ -145,8 +151,10 @@ node --check web/app.js
 
 Offline tests use mock GitHub responses and a temporary SQLite database. They are not substitutes for a full end-to-end test in your own browser and Docker environment.
 
-## Publishing
+## License and publishing
 
-The included `.gitignore` excludes database files, backups, Python caches, and `.env`. Review the source and choose a `LICENSE` before making the repository public; this package deliberately does not impose a license for you.
+This project is licensed under the [MIT License](LICENSE), copyright © 2026 Musta95.
+
+The included `.gitignore` excludes database files, backups, Python caches, and `.env`. Never commit private API tokens, local configuration, or personal SQLite databases.
 
 See [AI-INTEGRATION.md](AI-INTEGRATION.md) for AI API and MCP setup.
