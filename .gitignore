@@ -1,0 +1,25 @@
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+
+# Persistent data and backups
+data/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.backup-*
+*.bak
+
+# Local Python and test files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
