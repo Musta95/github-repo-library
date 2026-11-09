@@ -1,0 +1,16 @@
+services:
+  repo-library:
+    build: .
+    container_name: github-repo-library
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8765:8765"
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AUTO_DISCOVER_ENABLED: ${AUTO_DISCOVER_ENABLED:-true}
+      AUTO_DISCOVER_HOUR: ${AUTO_DISCOVER_HOUR:-3}
+      AUTO_DISCOVER_LIMIT: ${AUTO_DISCOVER_LIMIT:-10}
+      AUTO_DISCOVER_TZ: ${AUTO_DISCOVER_TZ:-Europe/Berlin}
+    volumes:
+      - ./data:/app/data
